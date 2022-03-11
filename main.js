@@ -8,10 +8,11 @@ function createDeck() {
     for (let i = 0; i < values.length; i++) {
         for (let x = 0; x < suits.length; x++) {
             let weight = parseInt(values[i]);
-            if (values[i] == "J" || values[i] == "Q" || values[i] == "K")
+            if (values[i] == "J" || values[i] == "Q" || values[i] == "K"){
                 weight = 10;
-            if (values[i] == "A")
+            }else if (values[i] == "A"){
                 weight = 11;
+            }
             let card = { Value: values[i], Suit: suits[x], Weight: weight };
             deck.push(card);
         }
@@ -71,9 +72,8 @@ function createPlayersUI() {
 
 
 function startGame() {
-    document.getElementById('btnStart').value = 'Restart';
     document.getElementById("status").style.display = "none";
-    // deal 2 cards to every player object
+  
     currentPlayer = 0;
     createDeck();
     shuffle();
