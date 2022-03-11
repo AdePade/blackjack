@@ -1,16 +1,19 @@
 body {
-    background-image: url("https://cdnroute.bpsgameserver.com/common/Common/Common/neutral/image/2017/03/game.netentBlackjack3Hand.backgroundimage_v3.jpg");
-  }
-  .game-body{
-    text-align: center;
-  }
-  
-  h3 {
-    color: red;
-    text-align: center;
-    font-size: 60px;
-  }
-  .game{
-    color: white;
-  }
-  
+  background-image: url("https://cdnroute.bpsgameserver.com/common/Common/Common/neutral/image/2017/03/game.netentBlackjack3Hand.backgroundimage_v3.jpg");
+}
+.game-body{
+  text-align: center;
+}
+
+h3 {
+  color: red;
+  text-align: center;
+  font-size: 100px;
+}
+
+h1 {
+  color: red;
+}
+.game{
+  color: white;
+}

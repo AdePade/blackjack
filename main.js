@@ -1,10 +1,10 @@
-let suits = ["Spades", "Hearts", "Diamonds", "Clubs"];
-let values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+let suits = ["s", "h", "d", "c"];
+let values = ["02", "03", "04", "05", "06", "07", "08", "09", "10", "J", "Q", "K", "A"];
 
-let deck = new Array();
+let deck = [];
 
 function createDeck() {
-    deck = new Array();
+    deck = [];
     for (let i = 0; i < values.length; i++) {
         for (let x = 0; x < suits.length; x++) {
             let weight = parseInt(values[i]);
@@ -16,7 +16,7 @@ function createDeck() {
             deck.push(card);
         }
     }
-}
+}  
 
 
 function shuffle() {
@@ -31,11 +31,11 @@ function shuffle() {
         deck[location2] = tmp;
     }
 }
-let players = new Array();
+let players = [];
 function createPlayers(num) {
-    players = new Array();
+    players = [];
     for (let i = 1; i <= num; i++) {
-        let hand = new Array();
+        let hand = [];
         let player = { Name: 'Player ' + i, ID: i, Points: 0, Hand: hand };
         players.push(player);
     }
@@ -70,7 +70,7 @@ function createPlayersUI() {
 
 
 
-function startblackjack() {
+function startGame() {
     document.getElementById('btnStart').value = 'Restart';
     document.getElementById("status").style.display = "none";
     // deal 2 cards to every player object
@@ -107,8 +107,8 @@ function renderCard(card, player) {
 
 function getCardUI(card) {
     let el = document.createElement('div');
-    el.className = 'card';
-    el.innerHTML = card.Suit + ' ' + card.Value;
+    el.className = 'card' +" " + card.Suit.concat("", card.Value);
+    el.innerHTML = card.Suit.concat("", card.Value);
     return el;
 }
 let currentPlayer = 0;
