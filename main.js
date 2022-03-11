@@ -21,8 +21,6 @@ function createDeck() {
 
 
 function shuffle() {
-    // for 1000 turns
-    // switch the values of two random cards
     for (let i = 0; i < 1000; i++) {
         let location1 = Math.floor((Math.random() * deck.length));
         let location2 = Math.floor((Math.random() * deck.length));
@@ -78,6 +76,7 @@ function startGame() {
     createDeck();
     shuffle();
     createPlayers(2);
+
     createPlayersUI();
     dealHands();
     document.getElementById('player_' + currentPlayer).classList.add('active');
@@ -85,8 +84,6 @@ function startGame() {
 
 
 function dealHands() {
-    // alternate handing cards to each player
-    // 2 cards each
     for (let i = 0; i < 2; i++) {
         for (let x = 0; x < players.length; x++) {
             let card = deck.pop();
@@ -117,14 +114,11 @@ function hitMe() {
         return alert('Please restart!')
     }
     
-    
-    // pop a card from the deck to the current player
-    // check if current player new points are over 21
     let card = deck.pop();
 
     players[currentPlayer].Hand.push(card);
     renderCard(card, currentPlayer);
-    // updatePoints();
+
     check();
 }
 
@@ -138,14 +132,11 @@ function check() {
     }
 }
 function stay() {
-    // move on to next player, if any
     if (currentPlayer != players.length - 1) {
         document.getElementById('player_' + currentPlayer).classList.remove('active');
         currentPlayer += 1;
         document.getElementById('player_' + currentPlayer).classList.add('active');
-    }
-
-    else {
+    }else {
         end();
     }
 }
@@ -158,9 +149,7 @@ function end() {
         if (players[i].Points > score && players[i].Points < 22) {
             winner = i;
         }
-
         score = players[i].Points;
     }
-
     document.getElementById('status').innerHTML = 'Winner: Player ' + players[winner].ID;
 }
