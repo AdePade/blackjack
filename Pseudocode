@@ -1,3 +1,5 @@
+//BlackJack Game First Project//
+
 //creating the items that will be in the card deck
 //in the suits array s: spades, h: hearts, d: diamonds, c: clubs
 //the number values array is created
