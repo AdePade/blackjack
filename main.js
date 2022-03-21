@@ -40,7 +40,6 @@ function createPlayers(num) {
     }
 }
 
-
 let playerNames = {
     1: 'Player',
     2: 'Dealer'
@@ -152,4 +151,4 @@ function end() {
         score = players[i].Points;
     }
     document.getElementById('status').innerHTML = 'Winner: Player ' + players[winner].ID;
-}
+};
